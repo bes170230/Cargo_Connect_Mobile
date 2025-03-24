@@ -2,27 +2,34 @@ package com.example.cargoconnect
 
 import android.os.Bundle
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.viewinterop.AndroidView
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapView
-import com.google.android.gms.maps.OnMapReadyCallback
+import androidx.compose.ui.tooling.preview.Preview
 import com.google.android.gms.maps.model.LatLng
+import com.google.maps.android.compose.GoogleMap
+import com.google.maps.android.compose.Marker
+import com.google.maps.android.compose.MapView
+import com.google.maps.android.compose.rememberCameraPositionState
+import com.google.maps.android.compose.CameraPosition
 
 @Composable
 fun TruckRouteMapView(latitude: Double, longitude: Double) {
-    val mapView = rememberMapViewWithLifecycle()
-
-    mapView.getMapAsync(object : OnMapReadyCallback {
-        override fun onMapReady(googleMap: GoogleMap) {
-            val truckLocation = LatLng(latitude, longitude)
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(truckLocation, 14f))
-        }
-    })
-
-    AndroidView({ mapView }) { mapView ->
-        mapView.getMapAsync { googleMap ->
-            // Handle map updates if necessary
-        }
+    // Initialize the camera position to center on the truck's location
+    val cameraPositionState = rememberCameraPositionState {
+        position = CameraPosition.fromLatLngZoom(LatLng(latitude, longitude), 14f)
     }
+
+    // Render the map with a marker at the truck's location
+    GoogleMap(
+        cameraPositionState = cameraPositionState
+    ) {
+        Marker(
+            position = LatLng(latitude, longitude),
+            title = "Truck Location"
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewTruckRouteMapView() {
+    TruckRouteMapView(latitude = 37.7749, longitude = -122.4194) // Example: San Francisco coordinates
 }
