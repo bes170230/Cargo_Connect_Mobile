@@ -56,14 +56,30 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Jetpack Compose
     implementation("androidx.compose.ui:ui:1.3.0")
     implementation("androidx.compose.material:material:1.3.0")
     implementation("androidx.navigation:navigation-compose:2.5.0")
+
+    // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.auth0.android:jwtdecode:2.0.2")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.0")
-    implementation("androidx.activity:activity-compose:1.5.0")
-    implementation("com.google.android.gms:play-services-maps:17.0.1")
-    implementation("com.google.android.libraries.maps:maps:3.0.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+
+    // OneSignal
+    implementation("com.onesignal:OneSignal:[4.0.0, 4.99.99]")
+
+    // Google Maps
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
+
+    // Kotlin Coroutines for async tasks
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+
+    // Location permission handling
+    implementation("com.google.android.material:material:1.5.0")
+
+    // DALI system communication (custom API integration, as no standard library for this)
+    // Add custom dependencies as needed
+
 }
