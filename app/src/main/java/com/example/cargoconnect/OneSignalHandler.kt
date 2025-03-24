@@ -10,7 +10,7 @@ class OneSignalHandler(application: Application) {
     }
 
     fun handleReceivedNotification() {
-        OneSignal.setNotificationReceivedHandler { receivedEvent ->
+        OneSignal.setNotificationWillShowInForegroundHandler() { receivedEvent ->
             val message = receivedEvent.notification.body
             // Handle push notification message
         }

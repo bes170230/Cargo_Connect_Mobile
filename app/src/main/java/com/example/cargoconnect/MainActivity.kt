@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
         }
 
         // Handle push notification data when the app is in the foreground
-        OneSignal.setNotificationReceivedHandler { receivedEvent ->
+        OneSignal.setNotificationWillShowInForegroundHandler() { receivedEvent ->
             val message = receivedEvent.notification.body
             // Handle push notification message
         }
