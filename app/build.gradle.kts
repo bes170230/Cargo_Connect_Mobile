@@ -68,12 +68,11 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
 
     // OneSignal
-    implementation("com.onesignal:OneSignal:[4.0.0, 4.99.99]")
+    implementation("com.onesignal:OneSignal:[5.0.0, 5.1.99]")
 
     // Google Maps
     implementation("com.google.android.gms:play-services-maps:18.1.0")
-    implementation ("com.google.maps.android:maps-compose:2.0.0")
-
+    implementation("com.google.maps.android:maps-compose:6.4.1")
     // Kotlin Coroutines for async tasks
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 
