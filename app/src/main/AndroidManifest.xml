@@ -29,6 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NotificationDetailActivity">
+            <!-- You can add intent filters or other configurations here if needed -->
+        </activity>
     </application>
 
 </manifest>

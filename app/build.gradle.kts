@@ -50,6 +50,23 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     testImplementation(libs.junit)
+    // JUnit
+    testImplementation("junit:junit:4.13.2")
+
+    // Mockito for mocking
+    testImplementation("org.mockito:mockito-core:4.0.0") // Mockito core
+    testImplementation("org.mockito:mockito-inline:4.0.0") // For inline mocking
+
+    // Robolectric for Android unit tests
+    testImplementation("org.robolectric:robolectric:4.8") // Latest Robolectric version
+
+    // AssertJ for fluent assertions (optional, but helpful)
+    testImplementation("org.assertj:assertj-core:3.23.1")
+
+    // AndroidX Test libraries
+    testImplementation("androidx.test:core:1.4.0")
+    testImplementation("androidx.test:runner:1.4.0")
+    testImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
