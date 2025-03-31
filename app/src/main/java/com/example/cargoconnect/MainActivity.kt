@@ -2,12 +2,17 @@ package com.example.cargoconnect
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.compose.ui.Alignment
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import com.example.cargoconnect.ui.theme.CargoAppTheme
+import com.example.cargoconnect.ui.theme.CargoConnectTheme
 import com.onesignal.OneSignal
 import com.onesignal.debug.LogLevel
 import com.onesignal.notifications.INotificationClickEvent
@@ -74,7 +79,7 @@ class MainActivity : ComponentActivity() {
         OneSignal.Notifications.addClickListener(clickListener)
 
         setContent {
-            CargoAppTheme {
+            CargoConnectTheme {
                 val message = intent.getStringExtra("message")
                 val lat = intent.getDoubleExtra("latitude", 0.0)
                 val lon = intent.getDoubleExtra("longitude", 0.0)
@@ -106,5 +111,15 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+}
+
+@Composable
+fun DefaultHomeScreen() {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Text("Welcome to Cargo App")
     }
 }
