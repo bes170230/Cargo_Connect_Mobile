@@ -16,7 +16,7 @@
         android:theme="@style/Theme.CargoConnect"
         tools:targetApi="31">
         <meta-data
-            android:name="com.google.android.gms.maps.v2.API_KEY"
+            android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAs8QTXeK0v4JX10NvfJa2lfr-cPT0OTmk"/>
         <activity
             android:name=".MainActivity"
@@ -28,9 +28,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".NotificationDetailActivity">
-            <!-- You can add intent filters or other configurations here if needed -->
         </activity>
     </application>
 
